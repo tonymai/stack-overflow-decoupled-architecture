@@ -11,6 +11,7 @@ $(document).on('page:change', function(){
 
 		});
 
+		//Lets define some jquery vars to pass into ajax call to create new question.
 		$('.new-question').on('submit', function(e) {
 			e.preventDefault();
 			var $title = $('input[name="question[title]"]')
@@ -19,9 +20,9 @@ $(document).on('page:change', function(){
 				url: 'http://localhost:3001' + $('.new-question').attr('action'),
 				type: 'POST',
 				data: { question: { title: $title.val(), content: $content.val() } }
-
+			//We are going to call the appendQuestion function defined below to dry it up and clear the values
 			}).done(function(response) {
-				appendQuestion(response);
+				appendQuestion([response]);
 				$title.val('');
 				$content.val('');
 			});

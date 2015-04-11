@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
 	def create
 		question = Question.new(question_params)
 		question.save
-		render :json => [question]
+		render :json => question
 	end
 
 
