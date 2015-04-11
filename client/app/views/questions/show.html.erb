@@ -1,0 +1,19 @@
+<body class="show">
+
+	<h1 class="<%= @id %>"></h1>
+
+	<h3></h3>
+
+	<script id="answer_template" type="x-handlebars-template">
+
+		{{#each answers}}
+			<h2>{{title}}</h2>
+			<p>{{content}}</p>
+		{{/each}}
+
+	</script>
+
+
+	<div class="results"></div>
+
+</body>
