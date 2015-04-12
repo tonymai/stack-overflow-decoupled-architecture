@@ -2,18 +2,18 @@ class QuestionsController < ApplicationController
 	before_filter :allow_cross_domain
 
 	def index
-		render :json => Question.all
+		render json: Question.all
 	end
 
 	def show
-		render :json => { question: Question.find(params[:id]),
+		render json: { question: Question.find(params[:id]),
 											answers: Answer.where(question_id: params[:id]) }
 	end
 
 	def create
 		question = Question.new(question_params)
 		question.save
-		render :json => question
+		render json: question
 	end
 
 
