@@ -6,4 +6,10 @@ class AnswersController < ApplicationController
     render json: answer
   end
 
+  private
+  
+  def question_params
+    params.require(:answer).permit(:title, :content)
+  end
+
 end
