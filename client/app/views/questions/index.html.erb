@@ -1,27 +1,15 @@
-<body class="index">
+<div class="view-index">
 
-	<h1>Questions</h1>
-
-	<script id="question_template" type="x-handlebars-template">
-
-		{{#each questions}}
+	<script id="post_template" type="x-handlebars-template">
+		{{#each post}}
 			<h3><a href="/questions/{{id}}">{{title}}</a></h3>
 			<p>{{content}}</p>
 		{{/each}}
-
 	</script>
 
+	<%= render partial: "question_form" %>
+
+	<hr>
+
 	<div class="results"></div>
-
-	<form class="new-question" action="/questions" method="POST">
-
-		Title:<br>
-		<input type="text" name="question[title]"/><br><br>
-		
-		Content:<br>
-		<textarea cols=50 rows=15 name="question[content]"/></textarea><br>
-
-		<input type="submit" value="submit">
-	</form>
-
 </body>

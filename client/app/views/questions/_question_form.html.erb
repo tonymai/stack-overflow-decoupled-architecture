@@ -1,0 +1,28 @@
+<div class="container row error">
+  <% if @error %>
+    <%= @error %>
+  <% end %>
+</div>
+
+<div class="container row">
+  <div class="col span_6">
+    <label>Create new question here:</label><br>
+    <form class="new-post" action="/questions" method="POST">
+      <div>
+        Title:<br>
+        <input type="text" name="post[title]"/>
+      </div>
+      <div>
+        Content:<br>
+        <textarea name="post[content]"/></textarea>
+      </div>
+      <input type="submit" value="submit">
+    </form>
+  </div>
+
+  <div class="col span_6">
+    <u>Preview:</u>
+    <div class="preview-title"></div>
+    <div class="preview-content"></div>
+  </div>
+</div>
