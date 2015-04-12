@@ -1,5 +1,5 @@
 $(document).on('page:change', function(){
-
+  
   $('input[name="post[title]"]').on('keyup',function(e) {
     previewTitle();
   });

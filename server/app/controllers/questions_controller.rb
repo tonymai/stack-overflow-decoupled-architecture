@@ -24,21 +24,20 @@ class QuestionsController < ApplicationController
     render json: { message: 'success', status: :ok }
   end
 
-  # def edit
-  #   @question = Question.find(params[:id])
-  # end
+  def edit
+    question = Question.find(params[:id])
+    render json: question
+  end
 
-  # def update
-  #   @question = Question.find(params[:id])
+  def update
+    question = Question.find(params[:id])
 
-  #   if @question.update_attributes(question_params)
-  #     redirect_to :question
-  #   else
-  #     @question = Question.find(params[:id])
-  #     @error = @question.errors.full_messages.to_sentence
-  #     render :edit, status: 400
-  #   end
-  # end
+    if question.update_attributes(question_params)
+      render json: { message: 'success', status: :ok }
+    else
+      render json: question.errors.full_messages.to_sentence, status: :unprocessable_entity
+    end
+  end
 
 	private
 

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get 'questions' => 'questions#index'
   get 'questions/:id' => 'questions#show'
-
+  get 'questions/:id/edit' => 'questions#edit'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
