@@ -1,0 +1,31 @@
+<script id="post_template" type="x-handlebars-template">
+  {{#each post}}
+    <div class="row">
+      <div class="col span_1 pad-xs">
+        <div>
+          <a class="vote-action" data-id="{{id}}" href="/questions/{{id}}/upvote"><i class="fa fa-caret-up fa-2x"></i></a>
+        </div>
+
+        <div>
+          <span class="vote-count" data-id="{{id}}">{{vote_count}}</span>
+        </div>
+
+        <div>
+          <a class="vote-action" data-id="{{id}}" href="/questions/{{id}}/downvote"><i class="fa fa-caret-down fa-2x"></i></a>
+        </div>
+      </div>
+
+      <div class="col span_9 pad-xs">
+        <div>
+          <a href="/questions/{{id}}">{{title}}</a>
+        </div>
+        <div>
+          {{content}}
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+  {{/each}}
+</script>

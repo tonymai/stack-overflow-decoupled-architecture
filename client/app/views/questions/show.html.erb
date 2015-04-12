@@ -1,23 +1,14 @@
 <div class="view-show">
 
-  <script id="post_template" type="x-handlebars-template">
-    {{#each post}}
-      <h2>{{title}}</h2>
-      <p>{{content}}</p>
-    {{/each}}
-  </script>
-
 	<h2 class="<%= @id %>"></h2>
 	<p class="question-content"></p>
 
   <a href="/questions/<%= @id %>/edit">Edit</a> | <a class="delete" href="/questions/<%= @id %>">Delete</a>
-
   <hr>
 
+  <%= render partial: "answer_template" %>
   <%= render partial: "answer_form" %>
-
   <hr>
-
 	<div class="results"></div>
 
 </body>

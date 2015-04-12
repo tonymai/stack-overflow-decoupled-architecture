@@ -1,15 +1,6 @@
 <div class="view-index">
-
-	<script id="post_template" type="x-handlebars-template">
-		{{#each post}}
-			<h3><a href="/questions/{{id}}">{{title}}</a></h3>
-			<p>{{content}}</p>
-		{{/each}}
-	</script>
-
+	<%= render partial: "question_template" %>
 	<%= render partial: "question_form" %>
-
 	<hr>
-
 	<div class="results"></div>
 </body>
