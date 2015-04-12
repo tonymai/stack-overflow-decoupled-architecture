@@ -15,6 +15,28 @@ class QuestionsController < ApplicationController
 		render json: question
 	end
 
+  def destroy
+    question = Question.find(params[:id])
+    question.destroy
+    render json: { message: 'success', status: :ok }
+  end
+
+  # def edit
+  #   @question = Question.find(params[:id])
+  # end
+
+  # def update
+  #   @question = Question.find(params[:id])
+
+  #   if @question.update_attributes(question_params)
+  #     redirect_to :question
+  #   else
+  #     @question = Question.find(params[:id])
+  #     @error = @question.errors.full_messages.to_sentence
+  #     render :edit, status: 400
+  #   end
+  # end
+
 	private
 
 	def question_params
