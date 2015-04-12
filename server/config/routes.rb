@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     resources :answers 
   end
 
-  
+  get 'questions/:question_id/answers/:id/upvote' => 'answers#upvote'
+  get 'questions/:question_id/answers/:id/downvote' => 'answers#downvote'
+  get 'questions/:id/upvote' => 'questions#upvote'
+  get 'questions/:id/downvote' => 'questions#downvote'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

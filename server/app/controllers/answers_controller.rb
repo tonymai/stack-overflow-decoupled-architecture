@@ -10,6 +10,19 @@ class AnswersController < ApplicationController
     end
   end
 
+  def upvote
+    answer = Answer.find(params[:id])
+    answer.increase_vote
+    render json: answer, status: :ok
+  end
+
+  def downvote
+    answer = Answer.find(params[:id])
+    answer.decrease_vote
+    render json: answer, status: :ok
+    end
+  end
+
   private
 
   def answer_params

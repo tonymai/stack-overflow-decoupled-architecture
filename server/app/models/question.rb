@@ -3,14 +3,14 @@ class Question < ActiveRecord::Base
 
   validates :title, :content, presence: true
 
-  # def increase_vote
-  #   self.vote_count += 1
-  #   self.save
-  # end
+  def increase_vote
+    self.vote_count += 1
+    self.save
+  end
 
-  # def decrease_vote
-  #   self.vote_count -= 1
-  #   self.save
-  # end
+  def decrease_vote
+    self.vote_count -= 1
+    self.save
+  end
 
 end
