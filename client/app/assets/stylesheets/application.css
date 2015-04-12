@@ -19,10 +19,10 @@
 h1 {
   font-weight: normal;
 }
-/*
+
 h1:before {
   content:url('/assets/logo.png')
-}*/
+}
 
 .navbar, .navbar a, .navbar a:hover {
   color: white;

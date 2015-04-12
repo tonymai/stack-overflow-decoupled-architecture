@@ -20,7 +20,6 @@ class AnswersController < ApplicationController
     answer = Answer.find(params[:id])
     answer.decrease_vote
     render json: answer, status: :ok
-    end
   end
 
   private
