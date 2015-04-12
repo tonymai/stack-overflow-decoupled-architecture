@@ -11,8 +11,11 @@ class QuestionsController < ApplicationController
 
 	def create
 		question = Question.new(question_params)
-		question.save
-		render json: question
+		if question.save
+			render json: question, status: :created
+		else
+			render json: question.errors.full_messages.to_sentence, status: :unprocessable_entity
+		end
 	end
 
   def destroy
