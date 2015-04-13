@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :questions do 
-    resources :answers 
+  resources :questions do
+    member do
+      get 'upvote'
+      get 'downvote'
+    end
+    resources :answers do
+      member do
+        get 'upvote'
+        get 'downvote'
+      end
+    end
   end
-
-  get 'questions/:question_id/answers/:id/upvote' => 'answers#upvote'
-  get 'questions/:question_id/answers/:id/downvote' => 'answers#downvote'
-  get 'questions/:id/upvote' => 'questions#upvote'
-  get 'questions/:id/downvote' => 'questions#downvote'
-
+  
   match '/questions/:id' => 'questions#render_204', via: [:options]
 
   # The priority is based upon order of creation: first created -> highest priority.
