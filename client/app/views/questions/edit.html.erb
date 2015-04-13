@@ -10,7 +10,8 @@
 
   <div class="container row">
     <div class="col span_6">
-      <form class="edit-post" action="/questions/<%= @id %>/edit" method="PUT">
+      <form class="edit-post" action="/questions/<%= @id %>" method="POST">
+        <input type="hidden" name="_method" value="put"/>
         <div>
           Title:<br>
           <input type="text" name="post[title]"/>
