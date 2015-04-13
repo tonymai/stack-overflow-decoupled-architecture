@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'questions/:id/upvote' => 'questions#upvote'
   get 'questions/:id/downvote' => 'questions#downvote'
 
+  match '/questions/:id' => 'questions#render_204', via: [:options]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

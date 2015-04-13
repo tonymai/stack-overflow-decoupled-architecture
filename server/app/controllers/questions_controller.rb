@@ -24,6 +24,10 @@ class QuestionsController < ApplicationController
     render json: { message: 'success', status: :ok }
   end
 
+  def render_204
+    head 204
+  end
+
   def edit
     question = Question.find(params[:id])
     render json: question
