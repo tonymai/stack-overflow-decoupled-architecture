@@ -14,14 +14,14 @@ class QuestionsController < ApplicationController
 		if question.save
 			render json: question, status: :created
 		else
-			render json: question.errors.full_messages.to_sentence, status: :unprocessable_entity
+			render json: { error: question.errors.full_messages.to_sentence }, status: :unprocessable_entity
 		end
 	end
 
   def destroy
     question = Question.find(params[:id])
     question.destroy
-    render json: { message: 'success', status: :ok }
+    render json: { message: 'success' } , status: :ok
   end
 
   def render_204
@@ -37,9 +37,9 @@ class QuestionsController < ApplicationController
     question = Question.find(params[:id])
 
     if question.update_attributes(question_params)
-      render json: { message: 'success', status: :ok }
+      render json: { message: 'success' }, status: :ok
     else
-      render json: question.errors.full_messages.to_sentence, status: :unprocessable_entity
+      render json: { error: question.errors.full_messages.to_sentence }, status: :unprocessable_entity
     end
   end
 

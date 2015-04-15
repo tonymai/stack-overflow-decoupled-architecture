@@ -24,7 +24,7 @@ $(document).on('page:change', function(){
       $content.val('');
 
     }).fail(function(response) {
-      $error.text(response.responseText);
+      $error.text(response.responseJSON.error);
     });
   });
 });

@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
     if answer.save
       render json: answer, status: :created
     else
-      render json: answer.errors.full_messages.to_sentence, status: :unprocessable_entity
+      render json: { error: answer.errors.full_messages.to_sentence }, status: :unprocessable_entity
     end
   end
 

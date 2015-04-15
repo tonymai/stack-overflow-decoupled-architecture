@@ -19,7 +19,7 @@ $(document).on('page:change', function(){
     }).done(function(response) {
       window.location.href = '/questions/' + id
     }).fail(function(response) {
-      $error.text(response.responseText);
+      $error.text(response.responseJSON.error);
     });
   });
 });
